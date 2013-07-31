@@ -40,12 +40,9 @@ end
 post '/tweets/new' do
 
   current_user.tweet(params[:tweet_text])
-  # client = Twitter::Client.new(
-  #   oauth_token: current_user.oauth_token,
-  #   oauth_token_secret: current_user.oauth_secret)
+  
+end
 
-
-  # client.update(params[:tweet_text])
-  # Twitter.update(params[:tweet_text])
-  # redirect '/tweets/new'
+get '/status/:job_id' do
+  # return the status of a job to an AJAX call
 end
