@@ -14,6 +14,9 @@ def request_token
     host_and_port = request.host
     host_and_port << ":9393" if request.host == "localhost"
 
+    p host_and_port
+
+    p oauth_consumer
     # the `oauth_consumer` method is defined above
     session[:request_token] = oauth_consumer.get_request_token(
       :oauth_callback => "http://#{host_and_port}/auth"
@@ -21,3 +24,20 @@ def request_token
   end
   session[:request_token]
 end
+  
+def current_user
+  @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
+end
+
+def current_user=(user)
+  session[:user_id] = user.id
+end
+
+def logged_in?
+  !current_user.nil?
+end
+
+def logout
+  session.clear
+end
+  
