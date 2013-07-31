@@ -1,4 +1,4 @@
-source :rubygems
+source 'http://rubygems.org'
 
 # PostgreSQL driver
 gem 'pg'
@@ -27,7 +27,7 @@ gem 'sidekiq'
 
 gem 'redis'
 
-group :test do
+# group :test do
   gem 'faker'
   gem 'rspec'
-end
+# end
