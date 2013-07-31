@@ -16,6 +16,9 @@ gem 'rake'
 
 gem 'shotgun'
 
+gem 'awesome_print'
+gem 'debugger'
+
 gem 'oauth'
 gem 'twitter'
 
